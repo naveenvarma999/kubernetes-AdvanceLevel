@@ -1,0 +1,39 @@
+# Secrets and credentials
+*.pem
+*.key
+*.crt
+*.p12
+*.kubeconfig
+kubeconfig
+.env
+.env.*
+secrets.yaml
+secret.yaml
+
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+crash.log
+*.tfvars
+!example.tfvars
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+
+# Operating system
+.DS_Store
+Thumbs.db
+
+# Helm
+charts/*.tgz
+
+# Logs
+*.log
