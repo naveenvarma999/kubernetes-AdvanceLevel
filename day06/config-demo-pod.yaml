@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: config-demo-pod
+
+spec:
+  containers:
+    - name: config-demo-container
+      image: busybox:1.36
+
+      command:
+        - sh
+        - -c
+
+      args:
+        - |
+          echo "Application name: $APP_NAME"
+          echo "Environment: $APP_ENV"
+          echo "Log level: $LOG_LEVEL"
+          echo "Database username: $DB_USERNAME"
+          echo "Configuration loaded successfully"
+          sleep 3600
+
+      envFrom:
+        - configMapRef:
+            name: app-config
+
+        - secretRef:
+            name: app-secret
